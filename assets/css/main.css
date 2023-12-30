@@ -1829,6 +1829,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="tel"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -1849,6 +1850,7 @@ input, select, textarea {
 		input[type="text"]:invalid,
 		input[type="password"]:invalid,
 		input[type="email"]:invalid,
+		input[type="tel"]:invalid,
 		select:invalid,
 		textarea:invalid {
 			box-shadow: none;
@@ -1857,6 +1859,7 @@ input, select, textarea {
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
+		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
 			box-shadow: 0 0 0 2px #21b2a6;
@@ -1882,6 +1885,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="tel"],
 	select {
 		height: 2.75em;
 	}
@@ -2125,12 +2129,13 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			margin: 0 0 2em 0;
+			margin: 0;
 			width: 100%;
 		}
 
 			.image.fit img {
 				width: 100%;
+				height: 23em;
 			}
 
 /* List */
@@ -2398,10 +2403,15 @@ input, select, textarea {
 			}
 
 /* Button */
-
+	/* input[type="file"] {
+		visibility: hidden;
+		cursor: pointer;
+	} */
+	
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
+	input[type="file"],
 	button,
 	.button {
 		-moz-appearance: none;
@@ -2437,14 +2447,18 @@ input, select, textarea {
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
+		input[type="file"]:hover,
 		button:hover,
-		.button:hover {
+		.button:hover,
+		.file:hover {
 			background-color: rgba(144, 144, 144, 0.25);
 		}
 
 		input[type="submit"]:active,
 		input[type="reset"]:active,
 		input[type="button"]:active,
+		input[type="file"]:active,
+		input[type="file"]:active,
 		button:active,
 		.button:active {
 			background-color: rgba(144, 144, 144, 0.5);
@@ -2487,7 +2501,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #ed4933;
+			background-color: rgb(235, 110, 0);
 			box-shadow: none !important;
 			color: #ffffff !important;
 		}
@@ -2497,15 +2511,8 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #ef5e4a !important;
-			}
-
-			input[type="submit"].primary:active,
-			input[type="reset"].primary:active,
-			input[type="button"].primary:active,
-			button.primary:active,
-			.button.primary:active {
-				background-color: #eb341c !important;
+				background-color: whitesmoke !important;
+				color: black !important;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2980,9 +2987,8 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			/* background-color: #505393; */
-			background-color: #272829;
-			color: #acacb7;
+			background-color: #2e3842;
+			color: #d3d4e4;
 		}
 
 			.wrapper.style3 strong, .wrapper.style3 b {
@@ -3352,7 +3358,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #21b2a6;
+		background: rgb(235, 110, 0);
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -3709,7 +3715,7 @@ input, select, textarea {
 
 			#banner {
 				padding: 7em 3em 5em 3em ;
-				height: auto;
+				height: 100vh;
 				min-height: 0;
 			}
 
@@ -3758,7 +3764,9 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		max-width: 45em;
+		max-width: 55em;
+		text-align: center;
+		justify-content: center;
 	}
 
 		#cta .inner header {
@@ -3766,7 +3774,7 @@ input, select, textarea {
 			-webkit-order: 1;
 			-ms-order: 1;
 			order: 1;
-			padding-right: 3em;
+			/* padding-right: 3em; */
 			width: 70%;
 		}
 
@@ -3997,4 +4005,102 @@ input, select, textarea {
 
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
+	}
+	#contact {
+		margin: auto;
+		width: 90%;
+		text-align: center;
+	}
+	.col-12 > ul.actions{
+		display: flex;
+		justify-content: center;
+	}
+	#testimonials{
+		width: 80%;
+		margin: 5em auto;
+		text-align: center;
+	}
+	#testimonials button{
+		box-shadow: none;
+		display: flex;
+		align-items: center;
+		margin: auto;
+	}
+	@media screen and (max-width: 980px) {
+		.actions li{
+			margin: auto;
+		}
+		.row .col-4{
+			width: 50%;
+		}
+		.image.fit img{
+			height: 20em;
+		}
+	}
+	@media screen and (max-width: 500px){
+		.row .col-4{
+			width: 100%;
+		}
+	}
+	.file-upload {
+		border: 1px solid #ccc;
+		display: inline-block;
+		padding: 6px 12px;
+		cursor: pointer;
+	}
+	.upload-overlay {
+		z-index: 0;
+		opacity: 0.5;
+	}
+	.upload-btn {
+		z-index: 10;
+		opacity: 0;
+	}
+	.inputfile {
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		z-index: -1;
+	}
+	.inputfile + label {
+		display: inline-block;
+		cursor: pointer;
+		text-align: center;
+	}
+	
+	.inputfile:focus + label,
+	.inputfile + label:hover {
+		background-color: red;
+	}
+	.file {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		background-color: transparent;
+		border-radius: 3px;
+		border: 0;
+		box-shadow: inset 0 0 0 2px #fff;
+		color: #fff;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 0.8em;
+		font-weight: 600;
+		height: 3.125em;
+		letter-spacing: 0.225em;
+		line-height: 3.125em;
+		max-width: 30em;
+		padding: 0 2.75em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
