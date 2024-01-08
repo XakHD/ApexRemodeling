@@ -372,6 +372,9 @@ input, select, textarea {
 		.row > .col-6 {
 			width: 50%;
 		}
+		
+ 
+
 
 		.row > .off-6 {
 			margin-left: 50%;
@@ -471,6 +474,7 @@ input, select, textarea {
 			.row.gtr-50.gtr-uniform {
 				margin-top: -0.75em;
 			}
+		
 
 				.row.gtr-50.gtr-uniform > * {
 					padding-top: 0.75em;
@@ -2138,6 +2142,10 @@ input, select, textarea {
 				height: 23em;
 			}
 
+		
+
+
+
 /* List */
 
 	ol {
@@ -2819,6 +2827,14 @@ input, select, textarea {
 
 			}
 
+			@media (max-width: 736px) {
+				.col-6.box {
+				  width: 100%;
+				  /* other styles you want to apply */
+				}
+			  }
+			
+
 		.wrapper.alt {
 			padding: 0;
 		}
@@ -3314,6 +3330,12 @@ input, select, textarea {
 				padding: 4em 3em 2em 3em ;
 			}
 
+			@media screen and (max-width: 736px) {
+				.wrapper {
+					width: 100%;
+				}
+			}
+
 		}
 
 		@media screen and (max-width: 736px) {
@@ -3323,6 +3345,8 @@ input, select, textarea {
 			}
 
 		}
+
+
 
 /* Page Wrapper + Menu */
 
@@ -3880,10 +3904,10 @@ input, select, textarea {
 				padding: 5em 3em 3em 3em ;
 			}
 
-				#main > header h2 {
+				 #main > header h2 {
 					font-size: 1.25em;
 					margin: 0 0 1em 0;
-				}
+				} 
 
 		}
 
